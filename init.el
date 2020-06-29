@@ -403,19 +403,9 @@ you should place your code here."
 
   ;; Alows to view list of terminal buffers : <leader> b t
   ;; Mostly modified the instructions from https://occasionallycogent.com/emacs_custom_helm_source/index.html
-  (defun ah/constrct-process-name (buf)
-    "Helper function to display the process tree in the vterm buffer list"
-    (let ((processtr (let ((process (get-buffer-process buf)))
-                       (if process
-                           (substring (shell-command-to-string (format "pstree -p %d" (process-id process))) 0 -1)
-                         "No process")) ))
-      (concat "    "  processtr (loop repeat (- 30 (length processtr)) concat " "))))
-
   (defun ah/make-helm-term-buffer-string (buf)
     "Helper function to align the buffer name and it's directory correctly"
-    (concat (buffer-name buf) (loop repeat (- 20 (length (buffer-name buf))) concat " ")
-            (buffer-local-value 'default-directory buf) (loop repeat (- 30 (length (buffer-local-value 'default-directory buf))) concat " ")
-            (ah/constrct-process-name buf)))
+    (concat (buffer-name buf) (loop repeat (- 30 (length (buffer-name buf))) concat " ") (buffer-local-value 'default-directory buf)))
   (defun ah/helm-term-buffers ()
     "View a list of terminal buffers in helm"
     (interactive)
