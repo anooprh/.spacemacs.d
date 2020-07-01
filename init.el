@@ -90,11 +90,11 @@ values."
      (plantuml :variables
                plantuml-jar-path "~/plantUml.jar"
                org-plantuml-jar-path "~/plantUml.jar")
+     pdf
      ibuffer
-
      (templates :variables templates-private-directory "~/.spacemacs.d/templates")
-
      (restclient :variables restclient-use-org t)
+     multiple-cursors
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -181,7 +181,7 @@ values."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 12.0
+                               :size 15.0
                                :weight normal
                                :width normal
                                :powerline-scale 1)
