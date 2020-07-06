@@ -453,6 +453,9 @@ you should place your code here."
 
   ;; Set reveal js for org mode
   (setq org-re-reveal-root "https://cdn.jsdelivr.net/npm/reveal.js")
+
+  ;; Set visual line mode for org mode
+  (add-hook 'org-mode-hook #'visual-line-mode)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
